@@ -2,4 +2,25 @@
     box-sizing: border-box;
   }
   
- 
+ h1 {
+  color: blue;
+  font-size: x-large;
+  text-align: center;
+  text-decoration: underline;
+ }
+ .container {
+  
+  justify-content: center;
+ }
+ .btn {
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(8, 158, 228);
+  font-size: xx-large;
+ }
+ .reset-btn {
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(8, 158, 228);
+  font-size: xx-large;
+ }
