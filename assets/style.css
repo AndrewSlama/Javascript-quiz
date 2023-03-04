@@ -7,6 +7,7 @@
   font-size: x-large;
   text-align: center;
   text-decoration: underline;
+  background-color: red;
  }
  .container {
   
@@ -17,10 +18,18 @@
   justify-content: center;
   background-color: rgb(8, 158, 228);
   font-size: xx-large;
+  padding: 20px;
  }
  .reset-btn {
   align-items: center;
   justify-content: center;
   background-color: rgb(8, 158, 228);
   font-size: xx-large;
+  padding: 20px;
+  align-items: end;
+ }
+ .card {
+  border-radius: 5%;
+  background-color: black;
+ 
  }
