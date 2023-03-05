@@ -1,12 +1,18 @@
-document.addEventListener('click', btn); //does something when start button clicked
 document.querySelector("#start-btn"); //selects start button
-let hiddenBtn = document.getElementById('hidden');
-let visibleBtn = document.getElementById('button');
+let hiddenBtn = document.getElementById('hidden').innerHTML;
+let visibleBtn = document.getElementById('button').innerHTML;
+
 
 var answer = true;
 var question = true;
 var ifQuestion = false;
 var ifAnswer = false;
+
+document.addEventListener('click', btn) {
+    if(visibleBtn === "click")
+    
+    }
+}//does something when button is clicked
 
 
 function setTime() {

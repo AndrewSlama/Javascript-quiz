@@ -1,0 +1,27 @@
+.header {
+    background-color: darkblue;
+    text-align: center;
+    font-size: x-large;
+    color: aliceblue;
+}
+.card {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 20%;
+}
+.btn1 {
+    display:flex;
+    justify-content: center;
+    border-radius: 15%;
+    background-color: rgb(13, 128, 228);
+    color: rgb(243, 246, 248);
+    font-size: larger;
+}
+.btn {
+    display: flex;
+    color: rgb(240, 236, 11);
+    background-color: rgb(245, 12, 12);
+    font-size: x-large;
+    justify-content: space-around;
+}
