@@ -3,8 +3,8 @@ let hiddenBtn = document.getElementById('hidden').innerHTML;
 let visibleBtn = document.getElementById('button').innerHTML;
 
 
-var answer = true;
-var question = true;
+var answer = [];
+var question = [];
 var ifQuestion = false;
 var ifAnswer = false;
 
