@@ -5,7 +5,10 @@ var recall = document.getElementById('recall');
 var submitBtn = document.getElementById('submit');
 var questions = document.getElementById('question');
 var answers = document.getElementById('answers');
-var secondsLeft = 10;
+var option1 = document.getElementById('option1');
+var option2 = document.getElementById('option2');
+var option3 = document.getElementById('option3');
+var secondsLeft = 40;
 var questionIndex = 0;
 var myQuestions = [
 	{
@@ -16,7 +19,7 @@ var myQuestions = [
 			c: 'Int'
 		},
         
-        correctAnswer: 'Int'
+        correctAnswer: 'c'
     },
     {
 		question: "JavaScript file has an extention of",
@@ -26,7 +29,7 @@ var myQuestions = [
 			c: '.xml'
 		},
         
-        correctAnswer: '.Js'
+        correctAnswer: 'b'
     },
     {
 		question: "Event is used to check an empty text box",
@@ -36,7 +39,7 @@ var myQuestions = [
 			c: 'OnBlur()'
 		},
         
-        correctAnswer: 'OnClick()'
+        correctAnswer: 'a'
     },
     {
 		question: "Inside which HTML element do we put the JavaScript",
@@ -46,7 +49,7 @@ var myQuestions = [
 			c: 'Script'
 		},
         
-        correctAnswer: 'Script'
+        correctAnswer: 'c'
     },
     {
 		question: "True is a Data-type known as a/an",
@@ -56,7 +59,7 @@ var myQuestions = [
 			c: 'Object'
 		},
         
-        correctAnswer: 'Boolean'
+        correctAnswer: 'b'
     }
 ];
 
@@ -71,22 +74,33 @@ submitBtn.addEventListener('click', function() {
 });
 
 function quizArts() {
-
+    // alert(answers.value);
+    // alert(typeof answers.value);
+    if (answers.value != myQuestions[questionIndex].correctAnswer) {
+        secondsLeft = secondsLeft - 5;
+    } else {
+    questionIndex++;
+    questions.innerHTML = myQuestions[questionIndex].question;
+    option1.innerHTML = myQuestions[questionIndex].answers.a;
+    option2.innerHTML = myQuestions[questionIndex].answers.b;
+    option3.innerHTML = myQuestions[questionIndex].answers.c;
+    }
 };
     
 function countDown() {
     questions.innerHTML = myQuestions[questionIndex].question;
-    for (var answer in myQuestions[questionIndex].answers) {
-        
-    }
+    option1.innerHTML = myQuestions[questionIndex].answers.a;
+    option2.innerHTML = myQuestions[questionIndex].answers.b;
+    option3.innerHTML = myQuestions[questionIndex].answers.c;
     recall.style.visibility = "visible";
-    secondsLeft = 15;
+    secondsLeft = 40;
     startBtn.style.visibility = "hidden";
     var timeInterval = setInterval(function() {
         secondsLeft--;
         if (secondsLeft >= 0) {
             timerElement.textContent = secondsLeft + " seconds left";  
         }else{
+            alert("Wrong, try again.");
             timerElement.textContent = "Game Over";
             clearInterval(timeInterval);
             startBtn.style.visibility = "visible";
