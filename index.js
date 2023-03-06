@@ -28,54 +28,54 @@ countdown();
 }
 var myQuestions = [
 	{
-		question: "What is 10/2?",
+		question: "Which statement cannot be used to declare a variable in JavaScript",
 		answers: {
-			a: '3',
-			b: '5',
-			c: '115'
+			a: 'Var',
+			b: 'Let',
+			c: 'Int'
 		},
         
-        correctAnswer: 'c'
+        correctAnswer: 'Var'
     }
     {
-		question: "What is 10/2?",
+		question: "JavaScript file has an extention of",
 		answers: {
-			a: '3',
-			b: '5',
-			c: '115'
+			a: '.Java',
+			b: '.Js',
+			c: '.xml'
 		},
         
-        correctAnswer: 'c'
+        correctAnswer: '.Js'
     }
     {
-		question: "What is 10/2?",
+		question: "Event is used to check an empty text box",
 		answers: {
-			a: '3',
-			b: '5',
-			c: '115'
+			a: 'Onclick()',
+			b: 'OnFocus()',
+			c: 'OnBlur()'
 		},
         
-        correctAnswer: 'c'
+        correctAnswer: 'OnClick()'
     }
     {
-		question: "What is 10/2?",
+		question: "Inside which HTML element do we put the JavaScript",
 		answers: {
-			a: '3',
-			b: '5',
-			c: '115'
+			a: 'Scripting',
+			b: 'Js',
+			c: 'Script'
 		},
         
-        correctAnswer: 'c'
+        correctAnswer: 'Script'
     }
     {
-		question: "What is 10/2?",
+		question: "True is a Data type known as",
 		answers: {
-			a: '3',
-			b: '5',
-			c: '115'
+			a: 'String',
+			b: 'Boolean',
+			c: 'Object'
 		},
         
-        correctAnswer: 'c'
+        correctAnswer: 'Boolean'
     }
 ];
 
