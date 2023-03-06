@@ -1,10 +1,11 @@
 //selects start button
-let hiddenBtn = document.getElementById('hidden');
 let startBtn = document.getElementById("start-btn");
 var timerElement = document.getElementById("timer");
-
+var recall = document.getElementById('recall');
+var submitBtn = document.getElementById('submit');
+var questions = document.getElementById('question')
+var 
 var secondsLeft = 10;
-var answer = "";
 var myQuestions = [
 	{
 		question: "Which statement cannot be used to declare a variable in JavaScript",
@@ -58,13 +59,19 @@ var myQuestions = [
     }
 ];
 
-//var startButton = document.addEventListener('click', startBtn)
+recall.style.visibility = "hidden";
 
 startBtn.addEventListener('click', function() {
     countDown();
 });
+
+// submitBtn.addEventListener('click', function() {
+    
+// });
     
 function countDown() {
+    recall.style.visibility = "visible";
+    secondsLeft = 15;
     startBtn.style.visibility = "hidden";
     var timeInterval = setInterval(function() {
         secondsLeft--;
@@ -74,6 +81,7 @@ function countDown() {
             timerElement.textContent = "Game Over";
             clearInterval(timeInterval);
             startBtn.style.visibility = "visible";
+            recall.style.visibility = "hidden";
         }
     }, 1000);
 };
@@ -97,16 +105,16 @@ function countDown() {
 //       }
 //     }, 1000);
 //   }
-function loseGame() {
-    wordBlank.textContent = "GAME OVER";
-    loseCounter++
-    startButton.disabled = false;
-    setLosses()
-  }
-  function winGame() {
-    wordBlank.textContent = "Good Work! ";
-    winCounter++
-    startButton.disabled = false;
-    setWins()
-  }
+// function loseGame() {
+//     wordBlank.textContent = "GAME OVER";
+//     loseCounter++
+//     startBtn.disabled = false;
+//     setLosses()
+//   }
+//   function winGame() {
+//     wordBlank.textContent = "Good Work! ";
+//     winCounter++
+//     startBtn.disabled = false;
+//     setWins()
+//   }
    
