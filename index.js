@@ -3,9 +3,10 @@ let startBtn = document.getElementById("start-btn");
 var timerElement = document.getElementById("timer");
 var recall = document.getElementById('recall');
 var submitBtn = document.getElementById('submit');
-var questions = document.getElementById('question')
-var 
+var questions = document.getElementById('question');
+var answers = document.getElementById('answers');
 var secondsLeft = 10;
+var questionIndex = 0;
 var myQuestions = [
 	{
 		question: "Which statement cannot be used to declare a variable in JavaScript",
@@ -65,11 +66,19 @@ startBtn.addEventListener('click', function() {
     countDown();
 });
 
-// submitBtn.addEventListener('click', function() {
-    
-// });
+submitBtn.addEventListener('click', function() {
+    quizArts();
+});
+
+function quizArts() {
+
+};
     
 function countDown() {
+    questions.innerHTML = myQuestions[questionIndex].question;
+    for (var answer in myQuestions[questionIndex].answers) {
+        
+    }
     recall.style.visibility = "visible";
     secondsLeft = 15;
     startBtn.style.visibility = "hidden";
