@@ -33,4 +33,9 @@
     padding: 10px 25px;
     border-radius: 30px;
 }
-
+.answers {
+    padding-left: 25%;
+}
+.timer-text {
+    padding-right: 8%;
+}

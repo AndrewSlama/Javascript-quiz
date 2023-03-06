@@ -1,31 +1,10 @@
 //selects start button
 let hiddenBtn = document.getElementById('hidden');
-let startBtn = document.getElementById(".container");
+let startBtn = document.getElementById("start-btn");
+var timerElement = document.getElementById("timer");
 
-var secondsLeft = 40;
-var answer = [];
-var question = [];
-var isQuestion = false;
-var isAnswer = false;
-
-var startButton = document.addEventListener('click', startBtn)
-
-startBtn.addEventListener('click' function() {
-    count--;
-})
-    
-function countdown() {
-    var timeInterval = setInterval(function () {
-        if (secondsLeft > 1) {
-            startButton.textContent = secondsLeft + " seconds left";
-            secondsLeft--;
-        } else {
-            timeInterval.textContent = "Game Over";
-            clearInterval(timeInterval);
-        }
-    }, 4000);
-countdown();
-}
+var secondsLeft = 10;
+var answer = "";
 var myQuestions = [
 	{
 		question: "Which statement cannot be used to declare a variable in JavaScript",
@@ -35,8 +14,8 @@ var myQuestions = [
 			c: 'Int'
 		},
         
-        correctAnswer: 'Var'
-    }
+        correctAnswer: 'Int'
+    },
     {
 		question: "JavaScript file has an extention of",
 		answers: {
@@ -46,7 +25,7 @@ var myQuestions = [
 		},
         
         correctAnswer: '.Js'
-    }
+    },
     {
 		question: "Event is used to check an empty text box",
 		answers: {
@@ -56,7 +35,7 @@ var myQuestions = [
 		},
         
         correctAnswer: 'OnClick()'
-    }
+    },
     {
 		question: "Inside which HTML element do we put the JavaScript",
 		answers: {
@@ -66,9 +45,9 @@ var myQuestions = [
 		},
         
         correctAnswer: 'Script'
-    }
+    },
     {
-		question: "True is a Data type known as",
+		question: "True is a Data-type known as a/an",
 		answers: {
 			a: 'String',
 			b: 'Boolean',
@@ -79,4 +58,55 @@ var myQuestions = [
     }
 ];
 
+//var startButton = document.addEventListener('click', startBtn)
+
+startBtn.addEventListener('click', function() {
+    countDown();
+});
+    
+function countDown() {
+    startBtn.style.visibility = "hidden";
+    var timeInterval = setInterval(function() {
+        secondsLeft--;
+        if (secondsLeft >= 0) {
+            timerElement.textContent = secondsLeft + " seconds left";  
+        }else{
+            timerElement.textContent = "Game Over";
+            clearInterval(timeInterval);
+            startBtn.style.visibility = "visible";
+        }
+    }, 1000);
+};
+// function startTimer() {
+//     timer = setInterval(function() {
+//       timerCount--;
+//       timerElement.textContent = timerCount;
+//       if (timerCount >= 0) {
+       
+//         if (isWin && timerCount > 0) {
+         
+//           clearInterval(timer);
+//           winGame();
+//         }
+//       }
+      
+//       if (timerCount === 0) {
+        
+//         clearInterval(timer);
+//         loseGame();
+//       }
+//     }, 1000);
+//   }
+function loseGame() {
+    wordBlank.textContent = "GAME OVER";
+    loseCounter++
+    startButton.disabled = false;
+    setLosses()
+  }
+  function winGame() {
+    wordBlank.textContent = "Good Work! ";
+    winCounter++
+    startButton.disabled = false;
+    setWins()
+  }
    
