@@ -8,7 +8,10 @@ var answers = document.getElementById('answers');
 var option1 = document.getElementById('option1');
 var option2 = document.getElementById('option2');
 var option3 = document.getElementById('option3');
+var highScore =localStorage.getItem('highscore');
+var topScore = document.getElementById('highscore');
 var secondsLeft = 40;
+var finalScore = 0;
 var questionIndex = 0;
 var myQuestions = [
 	{
@@ -64,30 +67,50 @@ var myQuestions = [
 ];
 
 recall.style.visibility = "hidden";
-
+    if (!highScore) {
+        highScore = 0;
+    }
+    topScore.innerHTML = "Highscore:" + highScore;
 startBtn.addEventListener('click', function() {
+    
     countDown();
 });
 
 submitBtn.addEventListener('click', function() {
     quizArts();
+    finalScore = secondsLeft.toString();
+
 });
 
 function quizArts() {
     // alert(answers.value);
     // alert(typeof answers.value);
     if (answers.value != myQuestions[questionIndex].correctAnswer) {
+        alert(" -5 seconds, please try again");
         secondsLeft = secondsLeft - 5;
+
     } else {
-    questionIndex++;
-    questions.innerHTML = myQuestions[questionIndex].question;
-    option1.innerHTML = myQuestions[questionIndex].answers.a;
-    option2.innerHTML = myQuestions[questionIndex].answers.b;
-    option3.innerHTML = myQuestions[questionIndex].answers.c;
-    }
+        if (questionIndex <=3) {
+        questionIndex++;
+        questions.innerHTML = myQuestions[questionIndex].question;
+        option1.innerHTML = myQuestions[questionIndex].answers.a;
+        option2.innerHTML = myQuestions[questionIndex].answers.b;
+        option3.innerHTML = myQuestions[questionIndex].answers.c;
+        } else {
+            finalScore = secondsLeft.toString();
+            if (parseInt(finalScore) > highScore) {
+                localStorage.setItem('highscore', parseInt(finalScore));
+                highScore = localStorage.getItem('highscore');
+                topScore.innerHTML = "Highscore: " + highScore; 
+            }
+            secondsLeft = 0;
+            questionIndex = 0
+        }
+    };
 };
     
 function countDown() {
+    finalScore = 0;
     questions.innerHTML = myQuestions[questionIndex].question;
     option1.innerHTML = myQuestions[questionIndex].answers.a;
     option2.innerHTML = myQuestions[questionIndex].answers.b;
@@ -100,8 +123,7 @@ function countDown() {
         if (secondsLeft >= 0) {
             timerElement.textContent = secondsLeft + " seconds left";  
         }else{
-            alert("Wrong, try again.");
-            timerElement.textContent = "Game Over";
+            timerElement.textContent = "Game Over you scored: " + finalScore;
             clearInterval(timeInterval);
             startBtn.style.visibility = "visible";
             recall.style.visibility = "hidden";
