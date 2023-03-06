@@ -1,37 +1,26 @@
-document.querySelector("#start-btn"); //selects start button
-let hiddenBtn = document.getElementById('hidden').innerHTML;
-let startButton = document.getElementById("#start-btn").innerHTML;
+//selects start button
+let hiddenBtn = document.getElementById('hidden');
+let startBtn = document.getElementById("#start-btn");
 
 var secondsLeft = 40;
 var answer = [];
 var question = [];
-var ifQuestion = false;
-var ifAnswer = false;
+var isQuestion = false;
+var isAnswer = false;
 
-document.addEventListener('click', startButton) {
-    let startGo = setTimeout(function, 4000);
+var startButton = document.addEventListener('click', startButton)
     
-    }
+function countdown() {
+    var timeInterval = setInterval(function () {
+        if (secondsLeft > 1) {
+            startButton.textContent = secondsLeft + " seconds left";
+            secondsLeft--;
+        } else {
+            timeInterval.textContent = "Game Over";
+            clearInterval(timeInterval);
+        }
+    }, 4000);
+
 }
 
-
-function startTimeer() {
-    var seconds = 40;
-    setInterval(function()) {
-        seconds--;
-        if (seconds >= 0) {
-            span = document.getElementById("start-btn");
-            span.innerHTML = seconds;
-        }
-        if (seconds === 0) {
-            alert("Game Over");
-            clearInterval(seconds);
-        }
-    }, 4000;
-}
-function startTimeer();
-{
-    document.getElementById('start-btn');
-    startTimeer();
-};
    

@@ -1,8 +1,12 @@
+*{
+    background-color: cornflowerblue;
+}
+
 .header {
     background-color: darkblue;
     text-align: center;
     font-size: x-large;
-    color: aliceblue;
+    color: rgb(223, 226, 16);
 }
 .card {
     align-items: center;
@@ -13,16 +17,20 @@
 .btn1 {
     display:flex;
     justify-content: center;
-    border-radius: 15%;
+    border-radius: 10%;
     background-color: rgb(13, 128, 228);
     color: rgb(243, 246, 248);
     font-size: larger;
-    display: none;
+    margin-top: 2%;
 }
 .btn {
     display: flex;
-    color: rgb(240, 236, 11);
-    background-color: rgb(245, 12, 12);
+    color: rgb(11, 213, 240);
+    background-color: rgb(223, 226, 16);
     font-size: x-large;
     justify-content: space-around;
+    border: 2px solid transparent;
+    padding: 10px 25px;
+    border-radius: 30px;
 }
+
