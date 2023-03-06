@@ -1,6 +1,6 @@
 //selects start button
 let hiddenBtn = document.getElementById('hidden');
-let startBtn = document.getElementById("#start-btn");
+let startBtn = document.getElementById(".container");
 
 var secondsLeft = 40;
 var answer = [];
@@ -8,7 +8,11 @@ var question = [];
 var isQuestion = false;
 var isAnswer = false;
 
-var startButton = document.addEventListener('click', startButton)
+var startButton = document.addEventListener('click', startBtn)
+
+startBtn.addEventListener('click' function() {
+    count--;
+})
     
 function countdown() {
     var timeInterval = setInterval(function () {
@@ -20,7 +24,59 @@ function countdown() {
             clearInterval(timeInterval);
         }
     }, 4000);
-
+countdown();
 }
+var myQuestions = [
+	{
+		question: "What is 10/2?",
+		answers: {
+			a: '3',
+			b: '5',
+			c: '115'
+		},
+        
+        correctAnswer: 'c'
+    }
+    {
+		question: "What is 10/2?",
+		answers: {
+			a: '3',
+			b: '5',
+			c: '115'
+		},
+        
+        correctAnswer: 'c'
+    }
+    {
+		question: "What is 10/2?",
+		answers: {
+			a: '3',
+			b: '5',
+			c: '115'
+		},
+        
+        correctAnswer: 'c'
+    }
+    {
+		question: "What is 10/2?",
+		answers: {
+			a: '3',
+			b: '5',
+			c: '115'
+		},
+        
+        correctAnswer: 'c'
+    }
+    {
+		question: "What is 10/2?",
+		answers: {
+			a: '3',
+			b: '5',
+			c: '115'
+		},
+        
+        correctAnswer: 'c'
+    }
+];
 
    
